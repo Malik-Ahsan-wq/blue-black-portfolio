@@ -1,0 +1,13 @@
+# Image Placeholders
+
+Add these images to this directory:
+-hero.png(400x400)
+- ahsan-photo.jpg (400x400px) - Your main profile photo
+- ahsan-about.jpg (400x500px) - About page photo  
+- og-image.jpg (1200x630px) - Open Graph image
+- project-*.jpg - Project screenshots
+- blog-*.jpg - Blog post images
+- testimonial-*.jpg - Client photos
+- case-study-*.jpg - Case study images
+
+For now, you can use placeholder images or add your real photos.
