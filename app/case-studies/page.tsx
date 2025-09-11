@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FiExternalLink, FiGithub, FiArrowRight, FiTarget, FiTool, FiTrendingUp } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiArrowRight, FiTarget, FiTool, FiTrendingUp, FiCode } from 'react-icons/fi'
 
 export default function CaseStudies() {
   const caseStudies = [
