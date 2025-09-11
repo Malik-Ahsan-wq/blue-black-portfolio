@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FiStar, FiQuote, FiLinkedin, FiMail } from 'react-icons/fi'
+import { FiStar, FiMessageCircle, FiLinkedin, FiMail } from 'react-icons/fi'
 
 export default function Testimonials() {
   const testimonials = [
@@ -169,7 +169,7 @@ export default function Testimonials() {
                 className="bg-card border border-border rounded-lg p-8 relative hover:shadow-lg transition-shadow"
               >
                 <div className="absolute top-6 right-6 text-primary/20">
-                  <FiQuote size={32} />
+                  <FiMessageCircle size={32} />
                 </div>
                 
                 <div className="flex items-center mb-6">

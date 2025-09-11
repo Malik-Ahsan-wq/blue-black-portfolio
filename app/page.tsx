@@ -34,11 +34,7 @@ export default function Home() {
             >
               <div className="relative flex items-center justify-center">
                 {/* Static Gradient Border for Mobile, Rotating for Desktop */}
-                <motion.div
-                  animate={{ rotate: window?.innerWidth > 768 ? 360 : 0 }}
-                  transition={{ duration: window?.innerWidth > 768 ? 20 : 0, repeat: window?.innerWidth > 768 ? Infinity : 0, ease: "linear" }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-blue-600 to-purple-600 p-1"
-                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-blue-600 to-purple-600 p-1" />
 
                 {/* Inner Circle - Responsive Sizes */}
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-white dark:bg-background p-2 shadow-2xl">
