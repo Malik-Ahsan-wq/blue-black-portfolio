@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FiCalendar, FiClock, FiTag, FiSearch, FiArrowRight, FiCode } from 'react-icons/fi'
@@ -19,26 +19,35 @@ interface BlogPost {
 }
 
 export default function Blog() {
-  const [posts, setPosts] = useState<BlogPost[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    fetchPosts()
-  }, [])
-
-  const fetchPosts = async () => {
-    try {
-      const response = await fetch('/api/blog')
-      const data = await response.json()
-      setPosts(data.posts || [])
-    } catch (error) {
-      console.error('Error fetching posts:', error)
-    } finally {
-      setLoading(false)
+  const blogPosts = [
+    {
+      id: 1,
+      title: 'Building Modern Web Applications with Next.js 14',
+      excerpt: 'Explore the latest features of Next.js 14 and how to build performant web applications.',
+      author: 'Ahsan Bashir',
+      date: '2024-01-15',
+      category: 'Web Development',
+      tags: ['Next.js', 'React', 'TypeScript'],
+      readTime: '5 min read',
+      slug: 'building-modern-web-applications-nextjs-14',
+      featured: true
+    },
+    {
+      id: 2,
+      title: 'Mastering TypeScript for Better Code Quality',
+      excerpt: 'Learn how TypeScript can improve your development workflow and code reliability.',
+      author: 'Ahsan Bashir',
+      date: '2024-01-10',
+      category: 'Programming',
+      tags: ['TypeScript', 'JavaScript', 'Development'],
+      readTime: '7 min read',
+      slug: 'mastering-typescript-code-quality',
+      featured: true
     }
-  }
+  ]
 
   const blogPosts = [
     {
@@ -122,14 +131,14 @@ export default function Blog() {
     { id: 'Design', label: 'Design' }
   ]
 
-  const filteredPosts = posts.filter(post => {
+  const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory
     return matchesSearch && matchesCategory
   })
 
-  const featuredPosts = posts.filter(post => post.featured)
+  const featuredPosts = blogPosts.filter(post => post.featured)
 
   return (
     <div className="pt-16">

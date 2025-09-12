@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FiCalendar, FiClock, FiArrowLeft, FiShare2, FiCode } from 'react-icons/fi'
@@ -19,45 +19,20 @@ interface BlogPost {
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
-  const [post, setPost] = useState<BlogPost | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetchPost()
-  }, [params.slug])
-
-  const fetchPost = async () => {
-    try {
-      const response = await fetch(`/api/blog/${params.slug}`)
-      if (response.ok) {
-        const data = await response.json()
-        setPost(data.post)
-      }
-    } catch (error) {
-      console.error('Error fetching post:', error)
-    } finally {
-      setLoading(false)
-    }
+  const post = {
+    id: 1,
+    title: 'Building Modern Web Applications with Next.js 14',
+    excerpt: 'Explore the latest features of Next.js 14 and how to build performant web applications.',
+    content: 'Next.js 14 brings exciting new features including improved performance, better developer experience, and enhanced SEO capabilities.',
+    author: 'Ahsan Bashir',
+    date: '2024-01-15',
+    category: 'Web Development',
+    tags: ['Next.js', 'React', 'TypeScript'],
+    readTime: '5 min read',
+    slug: 'building-modern-web-applications-nextjs-14'
   }
 
-  if (loading) {
-    return (
-      <div className="pt-16 min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-      </div>
-    )
-  }
 
-  if (!post) {
-    return (
-      <div className="pt-16 min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Post Not Found</h1>
-          <Link href="/blog" className="text-primary hover:underline">Back to Blog</Link>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="pt-16">
