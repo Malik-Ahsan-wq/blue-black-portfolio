@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import '../styles/animations.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { AOSProvider } from '@/components/AOSProvider'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 
@@ -47,11 +49,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen bg-white dark:bg-gray-900">
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </div>
+          <AOSProvider>
+            <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/10 dark:bg-gradient-to-br dark:from-background dark:via-primary/10 dark:to-accent/20">
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </AOSProvider>
         </ThemeProvider>
       </body>
     </html>

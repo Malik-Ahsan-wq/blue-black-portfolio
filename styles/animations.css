@@ -1,0 +1,451 @@
+/* Custom Animations and Effects */
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom cursor animations */
+.cursor-pointer {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cursor-pointer:hover {
+  transform: scale(1.05);
+}
+
+/* Button hover effects */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-outline:hover::before {
+  left: 100%;
+}
+
+/* Card hover effects */
+.card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: left 0.7s;
+  z-index: 1;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient text animation */
+.gradient-text {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Floating animation */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse animation */
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Spin animation for borders */
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar active section indicator */
+.nav-indicator {
+  position: relative;
+}
+
+.nav-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.nav-indicator.active::after {
+  width: 100%;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, .interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+}
+
+/* Loading animation for images */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Dark mode specific animations */
+.dark .image-loading {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}
+
+/* Responsive animations - reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Enhanced AOS Animations */
+.aos-animate {
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Custom AOS fade animations */
+[data-aos="fade-up-scale"] {
+  transform: translate3d(0, 100px, 0) scale(0.8);
+  opacity: 0;
+}
+
+[data-aos="fade-up-scale"].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+[data-aos="fade-down-scale"] {
+  transform: translate3d(0, -100px, 0) scale(0.8);
+  opacity: 0;
+}
+
+[data-aos="fade-down-scale"].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+[data-aos="zoom-in-rotate"] {
+  transform: scale(0.5) rotate(-180deg);
+  opacity: 0;
+}
+
+[data-aos="zoom-in-rotate"].aos-animate {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+[data-aos="slide-up-bounce"] {
+  transform: translate3d(0, 100px, 0);
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-aos="slide-up-bounce"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos="flip-left-3d"] {
+  transform: perspective(2500px) rotateY(-100deg);
+  opacity: 0;
+}
+
+[data-aos="flip-left-3d"].aos-animate {
+  transform: perspective(2500px) rotateY(0deg);
+  opacity: 1;
+}
+
+[data-aos="flip-right-3d"] {
+  transform: perspective(2500px) rotateY(100deg);
+  opacity: 0;
+}
+
+[data-aos="flip-right-3d"].aos-animate {
+  transform: perspective(2500px) rotateY(0deg);
+  opacity: 1;
+}
+
+/* Stagger animation for lists */
+.aos-stagger {
+  transition-delay: 0.1s;
+}
+
+.aos-stagger:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.aos-stagger:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.aos-stagger:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.aos-stagger:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.aos-stagger:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+/* Enhanced gradient animations */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+  background-size: 400% 400%;
+  animation: gradientBorder 4s ease infinite;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: inherit;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+@keyframes gradientBorder {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Morphing shapes animation */
+.morph-shape {
+  animation: morphShape 6s ease-in-out infinite;
+}
+
+@keyframes morphShape {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* Typewriter effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid #3b82f6;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3b82f6;
+  }
+}
+
+/* Particle effect background */
+.particle-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: particleMove 20s linear infinite;
+  opacity: 0.1;
+}
+
+@keyframes particleMove {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-50px) translateX(-50px);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .animate-spin-slow {
+    animation: none; /* Disable spinning on mobile for better performance */
+  }
+  
+  .card::before {
+    display: none; /* Disable card shine effect on mobile */
+  }
+  
+  .particle-bg::before {
+    display: none; /* Disable particle effect on mobile */
+  }
+  
+  .typewriter {
+    animation: none; /* Simplify typewriter on mobile */
+    border-right: none;
+  }
+}

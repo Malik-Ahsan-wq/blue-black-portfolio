@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi'
+import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,22 +28,64 @@ export default function Contact() {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_default'
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_default'
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'public_key_default'
 
-      if (response.ok) {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'ahsanmalikking57@gmail.com',
+        },
+        publicKey
+      )
+
+      if (result.status === 200) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', subject: '', message: '' })
+        
+        // Show success SweetAlert
+        await Swal.fire({
+          title: 'Message Sent Successfully!',
+          text: 'Thank you for your message. I will get back to you soon!',
+          icon: 'success',
+          confirmButtonText: 'Great!',
+          confirmButtonColor: '#10b981',
+          background: 'var(--background)',
+          color: 'var(--foreground)',
+          customClass: {
+            popup: 'border border-border rounded-lg',
+            confirmButton: 'px-6 py-2 rounded-lg font-medium'
+          }
+        })
       } else {
-        setSubmitStatus('error')
+        throw new Error('Failed to send message')
       }
     } catch (error) {
+      console.error('Error sending message:', error)
       setSubmitStatus('error')
+      
+      // Show error SweetAlert
+      await Swal.fire({
+        title: 'Oops! Something went wrong',
+        text: 'Failed to send your message. Please try again or contact me directly.',
+        icon: 'error',
+        confirmButtonText: 'Try Again',
+        confirmButtonColor: '#ef4444',
+        background: 'var(--background)',
+        color: 'var(--foreground)',
+        customClass: {
+          popup: 'border border-border rounded-lg',
+          confirmButton: 'px-6 py-2 rounded-lg font-medium'
+        }
+      })
     } finally {
       setIsSubmitting(false)
     }

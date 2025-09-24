@@ -48,6 +48,381 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 94.1%;
   }
+
+  /* Default Color Theme */
+  [data-color-theme="default"] {
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --ring: 221.2 83.2% 53.3%;
+    --accent: 189 94% 43%;
+  }
+
+  [data-color-theme="default"].dark {
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 217.2 91.2% 59.8%;
+    --accent: 189 94% 43%;
+  }
+
+  /* Purple Color Theme */
+  [data-color-theme="purple"] {
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 271 81% 56%;
+    --accent: 271 91% 65%;
+  }
+
+  [data-color-theme="purple"].dark {
+    --primary: 271 91% 65%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 271 91% 65%;
+    --accent: 271 91% 75%;
+  }
+
+  /* Blue Color Theme */
+  [data-color-theme="blue"] {
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 221.2 83.2% 53.3%;
+    --accent: 200 98% 39%;
+  }
+
+  [data-color-theme="blue"].dark {
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 217.2 91.2% 59.8%;
+    --accent: 200 98% 50%;
+  }
+
+  /* Emerald Color Theme */
+  [data-color-theme="emerald"] {
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 158 64% 52%;
+    --accent: 160 84% 39%;
+  }
+
+  [data-color-theme="emerald"].dark {
+    --primary: 160 84% 39%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 160 84% 39%;
+    --accent: 158 64% 52%;
+  }
+
+  /* Rose Color Theme */
+  [data-color-theme="rose"] {
+    --primary: 351 83% 61%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 351 83% 61%;
+    --accent: 349 89% 60%;
+  }
+
+  [data-color-theme="rose"].dark {
+    --primary: 349 89% 60%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 349 89% 60%;
+    --accent: 351 83% 61%;
+  }
+
+  /* Amber Color Theme */
+  [data-color-theme="amber"] {
+    --primary: 45 93% 47%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 45 93% 47%;
+    --accent: 43 96% 56%;
+  }
+
+  [data-color-theme="amber"].dark {
+    --primary: 43 96% 56%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 43 96% 56%;
+    --accent: 45 93% 47%;
+  }
+
+  /* Cyan Color Theme */
+  [data-color-theme="cyan"] {
+    --primary: 189 94% 43%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 189 94% 43%;
+    --accent: 188 95% 68%;
+  }
+
+  [data-color-theme="cyan"].dark {
+    --primary: 188 95% 68%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 188 95% 68%;
+    --accent: 189 94% 43%;
+  }
+
+  /* Pink Color Theme */
+  [data-color-theme="pink"] {
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 330 81% 60%;
+    --accent: 328 85% 70%;
+  }
+
+  [data-color-theme="pink"].dark {
+    --primary: 328 85% 70%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 328 85% 70%;
+    --accent: 330 81% 60%;
+  }
+
+  /* Indigo Color Theme */
+  [data-color-theme="indigo"] {
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 239 84% 67%;
+    --accent: 238 83% 77%;
+  }
+
+  [data-color-theme="indigo"].dark {
+    --primary: 238 83% 77%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 238 83% 77%;
+    --accent: 239 84% 67%;
+  }
+
+  /* Teal Color Theme */
+  [data-color-theme="teal"] {
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 173 80% 40%;
+    --accent: 172 66% 50%;
+  }
+
+  [data-color-theme="teal"].dark {
+    --primary: 172 66% 50%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 172 66% 50%;
+    --accent: 173 80% 40%;
+  }
+
+  /* Orange Color Theme */
+  [data-color-theme="orange"] {
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 24 95% 53%;
+    --accent: 20 91% 48%;
+  }
+
+  [data-color-theme="orange"].dark {
+    --primary: 20 91% 48%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 20 91% 48%;
+    --accent: 24 95% 53%;
+  }
+
+  /* Lime Color Theme */
+  [data-color-theme="lime"] {
+    --primary: 84 81% 44%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 84 81% 44%;
+    --accent: 82 78% 55%;
+  }
+
+  [data-color-theme="lime"].dark {
+    --primary: 82 78% 55%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 82 78% 55%;
+    --accent: 84 81% 44%;
+  }
+
+  /* Red Color Theme */
+  [data-color-theme="red"] {
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 0 84% 60%;
+    --accent: 0 91% 71%;
+  }
+
+  [data-color-theme="red"].dark {
+    --primary: 0 91% 71%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 0 91% 71%;
+    --accent: 0 84% 60%;
+  }
+
+  /* Green Color Theme */
+  [data-color-theme="green"] {
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 142 76% 36%;
+    --accent: 141 69% 58%;
+  }
+
+  [data-color-theme="green"].dark {
+    --primary: 141 69% 58%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 141 69% 58%;
+    --accent: 142 76% 36%;
+  }
+
+  /* Yellow Color Theme */
+  [data-color-theme="yellow"] {
+    --primary: 48 96% 53%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 48 96% 53%;
+    --accent: 45 93% 47%;
+  }
+
+  [data-color-theme="yellow"].dark {
+    --primary: 45 93% 47%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 45 93% 47%;
+    --accent: 48 96% 53%;
+  }
+
+  /* Violet Color Theme */
+  [data-color-theme="violet"] {
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 262 83% 58%;
+    --accent: 258 90% 66%;
+  }
+
+  [data-color-theme="violet"].dark {
+    --primary: 258 90% 66%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 258 90% 66%;
+    --accent: 262 83% 58%;
+  }
+
+  /* Sky Color Theme */
+  [data-color-theme="sky"] {
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 199 89% 48%;
+    --accent: 198 93% 60%;
+  }
+
+  [data-color-theme="sky"].dark {
+    --primary: 198 93% 60%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 198 93% 60%;
+    --accent: 199 89% 48%;
+  }
+
+  /* Slate Color Theme */
+  [data-color-theme="slate"] {
+    --primary: 215 20% 65%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 215 20% 65%;
+    --accent: 215 16% 47%;
+  }
+
+  [data-color-theme="slate"].dark {
+    --primary: 215 16% 47%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 215 16% 47%;
+    --accent: 215 20% 65%;
+  }
+
+  /* Zinc Color Theme */
+  [data-color-theme="zinc"] {
+    --primary: 240 5% 64%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 240 5% 64%;
+    --accent: 240 6% 10%;
+  }
+
+  [data-color-theme="zinc"].dark {
+    --primary: 240 6% 10%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 240 6% 10%;
+    --accent: 240 5% 64%;
+  }
+
+  /* Neutral Color Theme */
+  [data-color-theme="neutral"] {
+    --primary: 0 0% 45%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 0 0% 45%;
+    --accent: 0 0% 64%;
+  }
+
+  [data-color-theme="neutral"].dark {
+    --primary: 0 0% 64%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 0 0% 64%;
+    --accent: 0 0% 45%;
+  }
+
+  /* Stone Color Theme */
+  [data-color-theme="stone"] {
+    --primary: 25 5% 45%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 25 5% 45%;
+    --accent: 28 4% 64%;
+  }
+
+  [data-color-theme="stone"].dark {
+    --primary: 28 4% 64%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 28 4% 64%;
+    --accent: 25 5% 45%;
+  }
+
+  /* Crimson Color Theme */
+  [data-color-theme="crimson"] {
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 348 83% 47%;
+    --accent: 0 84% 60%;
+  }
+
+  [data-color-theme="crimson"].dark {
+    --primary: 0 84% 60%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 0 84% 60%;
+    --accent: 348 83% 47%;
+  }
+
+  /* Ocean Color Theme */
+  [data-color-theme="ocean"] {
+    --primary: 200 100% 37%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 200 100% 37%;
+    --accent: 189 94% 43%;
+  }
+
+  [data-color-theme="ocean"].dark {
+    --primary: 189 94% 43%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 189 94% 43%;
+    --accent: 200 100% 37%;
+  }
+
+  /* Forest Color Theme */
+  [data-color-theme="forest"] {
+    --primary: 120 61% 34%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 120 61% 34%;
+    --accent: 142 76% 36%;
+  }
+
+  [data-color-theme="forest"].dark {
+    --primary: 142 76% 36%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 142 76% 36%;
+    --accent: 120 61% 34%;
+  }
+
+  /* Sunset Color Theme */
+  [data-color-theme="sunset"] {
+    --primary: 9 100% 64%;
+    --primary-foreground: 0 0% 98%;
+    --ring: 9 100% 64%;
+    --accent: 39 100% 50%;
+  }
+
+  [data-color-theme="sunset"].dark {
+    --primary: 39 100% 50%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --ring: 39 100% 50%;
+    --accent: 9 100% 64%;
+  }
   
   * {
     @apply border-border;
